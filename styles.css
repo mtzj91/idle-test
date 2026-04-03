@@ -1,49 +1,45 @@
-.container {
+.game-container {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     background-color: #f0f0f0;
 }
 
-.header {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.button {
+.click-button {
     padding: 10px 20px;
-    font-size: 1em;
-    background-color: #4CAF50;
-    color: white;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
+    background-color: #28a745;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.button:hover {
-    background-color: #45a049;
+.click-button:hover {
+    background-color: #218838;
 }
 
 .stats {
-    font-size: 1.2em;
-    margin: 20px 0;
+    margin: 20px;
+    font-size: 18px;
+    color: #333;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-    .header {
-        font-size: 1.5em;
-    }
-    .button {
-        font-size: 0.8em;
-    }
-    .stats {
-        font-size: 1em;
-    }
+.shop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+}
+
+.shop-item {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
 }
