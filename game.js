@@ -9,10 +9,18 @@ const farms = { cost: 1000, count: 0, income: 20 };
 let pointsSpan, incomeSpan, clickButton, shopDiv;
 
 function initializeGame() {
+    console.log('Game initializing...');
     pointsSpan = document.getElementById('points');
     incomeSpan = document.getElementById('income');
     clickButton = document.getElementById('click-button');
     shopDiv = document.querySelector('.shop');
+    
+    console.log('Elements found:', { pointsSpan, incomeSpan, clickButton, shopDiv });
+    
+    if (!clickButton) {
+        console.error('Click button not found!');
+        return;
+    }
     
     clickButton.addEventListener('click', () => {
         points += 1;
@@ -92,8 +100,5 @@ function loadGame() {
     }
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeGame);
-} else {
-    initializeGame();
-}
+// ONLY call initializeGame when DOM is ready
+document.addEventListener('DOMContentLoaded', initializeGame);
