@@ -62,7 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function autoSave() {
         localStorage.setItem('idleGameData', JSON.stringify({
-            points, cursors: cursors.count, miners: miners.count, farms: farms.count
+            points,
+            cursors: { count: cursors.count, cost: cursors.cost },
+            miners: { count: miners.count, cost: miners.cost },
+            farms: { count: farms.count, cost: farms.cost }
         }));
     }
 
@@ -71,9 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (saved) {
             const data = JSON.parse(saved);
             points = data.points;
-            cursors.count = data.cursors;
-            miners.count = data.miners;
-            farms.count = data.farms;
+            
+            // Load counts and costs
+            cursors.count = data.cursors.count;
+            cursors.cost = data.cursors.cost;
+            miners.count = data.miners.count;
+            miners.cost = data.miners.cost;
+            farms.count = data.farms.count;
+            farms.cost = data.farms.cost;
         }
     }
 
